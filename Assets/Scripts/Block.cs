@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 class Block : MonoBehaviour
 {
     // This variable exists so that the block can be assigned to the spawner in the unity inspector 
@@ -29,6 +28,7 @@ class Block : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        //Switch case using the names of the gameobjects
         switch (other.gameObject.name)
         {
             case "Ball(Clone)":

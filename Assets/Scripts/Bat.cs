@@ -17,9 +17,9 @@ class Bat : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Controling the Bats position
+        //Sets the Bats position
         Vector3 position = transform.localPosition;
-        //Speed*direction will make the bat move smoothly in the direction pressed
+        //Speed*direction will make the bat move smoothly in the current direction
         position.x += speed * direction;
         //Set the local position to the position 
         transform.localPosition = position;
@@ -60,6 +60,7 @@ class Bat : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        //Switch case using the names of the gameobjects
         switch (other.gameObject.name)
         {
             //This will stop the bat from moving left when it hits the left wall
@@ -74,6 +75,7 @@ class Bat : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D other)
     {
+        //Switch case using the names of the gameobjects
         switch (other.gameObject.name)
         {
             //When they exit the collision zone of the left wall they can move left again

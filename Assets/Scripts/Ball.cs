@@ -11,19 +11,20 @@ class Ball : MonoBehaviour
     public float size = 1.0f;
     public float speed = 0.2f;
 
+    //Default DirectionX and Y are set 
     protected float directionX = 1.0f;
     protected float directionY = 0.5f;
 
 
     protected virtual void FixedUpdate()
     {
-        //New Vector3 called scale
+        //New Vector3 called scale created
         Vector3 scale = new Vector3();
-        //Scale set to size
+        //Scale of x and y set to size
         scale.x = size;
         scale.y = size;
         transform.localScale = scale;
-        //Handles the position and movement
+        //Handles the position and movement of the ball
         Vector3 position = transform.localPosition;
         position.x += speed * directionX;
         position.y += speed * directionY;
@@ -33,6 +34,7 @@ class Ball : MonoBehaviour
  
     void OnCollisionEnter2D(Collision2D other)
     {
+        //Switch case using the names of the gameobjects
         switch (other.gameObject.name)
         {
             case "Bat":
