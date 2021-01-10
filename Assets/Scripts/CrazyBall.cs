@@ -9,7 +9,7 @@ class CrazyBall : Ball
         if (Random.Range(0, 100) <= 2)
         {
             //Change Size 
-            size = Random.Range(0.2f, 3f);
+            size = Random.Range(1f, 3f);
             //Change Speed
             speed = Random.Range(0.2f, 0.5f);
         }
