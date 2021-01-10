@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
 class Bat : MonoBehaviour
 {
     //Setting our left and right movement keys for the bat
@@ -16,11 +15,13 @@ class Bat : MonoBehaviour
     //Making and setting the base direction the bat is going to be 0
     float direction = 0.0f;
 
-    
     void FixedUpdate()
     {
+        //Controling the Bats position
         Vector3 position = transform.localPosition;
+        //Speed*direction will make the bat move smoothly in the direction pressed
         position.x += speed * direction;
+        //Set the local position to the position 
         transform.localPosition = position;
     }
 
@@ -85,7 +86,6 @@ class Bat : MonoBehaviour
                 break;
         }
     }
-
 }
 
 

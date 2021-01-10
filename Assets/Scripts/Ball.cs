@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-
 class Ball : MonoBehaviour
 {
     // This variable exists so that the ball can be assigned to the spawner in the unity inspector 
     public BallSpawner spawner = null;
+    //To access the point update
+    public PointUpdate Point = null;
     //For the brick break audio 
     public AudioSource audioSource;
-
     //To set the defualt size and speed that can be edited in unity inspector if needed
     public float size = 1.0f;
     public float speed = 0.2f;
@@ -17,12 +17,13 @@ class Ball : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        //New Vector3 called scale
         Vector3 scale = new Vector3();
-
+        //Scale set to size
         scale.x = size;
         scale.y = size;
         transform.localScale = scale;
-
+        //Handles the position and movement
         Vector3 position = transform.localPosition;
         position.x += speed * directionX;
         position.y += speed * directionY;
@@ -50,7 +51,7 @@ class Ball : MonoBehaviour
                 // Despawn the ball that touches the red area at the bottom of the screen   
                 spawner.DespawnBall(this);
                 // Lives will be decreased by 1 till no balls remain
-                spawner.DecreaseLives();   
+                spawner.DecreaseLives(); 
                 break;
        
             case "Block(Clone)":
@@ -85,6 +86,7 @@ class Ball : MonoBehaviour
 
                 //Play the break sound so you know you broke a block
                 audioSource.Play();
+                Point.UpdatePoints();
                 break;
                 
             default:
@@ -95,6 +97,7 @@ class Ball : MonoBehaviour
     }
     public void SetDirection(int angleInDegrees)
     {
+        //For processing angle given by the random in ballspawner by getting angle in radians
         float angleInRadians = angleInDegrees * Mathf.Deg2Rad;
         directionX = Mathf.Cos(angleInRadians);
         directionY = Mathf.Sin(angleInRadians);

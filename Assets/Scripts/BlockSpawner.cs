@@ -47,7 +47,7 @@ class BlockSpawner : MonoBehaviour
                 else
                 {
                     //Making a Block with the current x and y values but x is -5 
-                    // cause 0,0 is the camera location and so the left side of the play area isnt left out
+                    //cause 0,0 is the camera location and so the left side of the play area isnt left out
                     Block blockClone = Instantiate(templateToCopy, new Vector2(x - 5, y), Quaternion.identity);
                     //Enables the block object
                     blockClone.gameObject.SetActive(true);

@@ -32,14 +32,11 @@ class BallSpawner : MonoBehaviour
 
     void SpawnBall(Ball templateToCopy)
     {
-
+        //Create the Clone of the Ball object
         Ball ballClone = Instantiate(templateToCopy);
 
-        // Move the new ball clone to the ball spawner's position
-        // ballClone.transform.position = transform.position;
-
         // Generate a random direction for the ball clone
-        int angle = Random.Range(20, 160);
+        int angle = Random.Range(20, 161);
         //To prevent the ball going straight up
         if (angle == 90)
         {
@@ -63,10 +60,11 @@ class BallSpawner : MonoBehaviour
 
         if (Lives == 1)
         {
-            //If Lives remain spawn a new ball
+            //For when 1 Life remains spawn a crazy ball
             SpawnBall(crazyBallTemplate);
         }
         else if (Lives > 0)
+            //If Lives remain spawn a new ball
             SpawnBall(ballTemplate);
         else
         {
