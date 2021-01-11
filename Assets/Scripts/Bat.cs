@@ -14,6 +14,8 @@ class Bat : MonoBehaviour
     public float speed = 0.2f;
     //Making and setting the base direction the bat is going to be 0
     float direction = 0.0f;
+    //For sound when a ball hits the bat
+    public AudioSource audioBat;
 
     void FixedUpdate()
     {
@@ -70,6 +72,10 @@ class Bat : MonoBehaviour
             //This will stop the bat from moving left when it hits the right wall
             case "Right Wall":
                 canMoveRight = false;
+                break;
+            case "Ball(Clone)":
+            case "CrazyBall(Clone)":
+                audioBat.Play();
                 break;
         }
     }

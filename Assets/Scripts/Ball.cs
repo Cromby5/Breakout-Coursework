@@ -6,7 +6,7 @@ class Ball : MonoBehaviour
     //To access the point update
     public PointUpdate Point = null;
     //For the brick break audio 
-    public AudioSource audioSource;
+    public AudioSource audioBreak;
     //To set the defualt size and speed that can be edited in unity inspector if needed
     public float size = 1.0f;
     public float speed = 0.2f;
@@ -87,7 +87,7 @@ class Ball : MonoBehaviour
                 }
 
                 //Play the break sound so you know you broke a block
-                audioSource.Play();
+                audioBreak.Play();
                 Point.UpdatePoints();
                 break;
                 
