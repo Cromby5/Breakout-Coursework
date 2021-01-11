@@ -54,11 +54,9 @@ class BlockSpawner : MonoBehaviour
                     //Add the block to the list 
                     blockList.Add(blockClone);
                 }
-             
            }
          }
     }
-   
     public void DespawnBlock(Block blockToDespawn)
     {
         // Remove the block from the list of blocks
@@ -89,5 +87,4 @@ class BlockSpawner : MonoBehaviour
         //Stop This Coroutine
         StopCoroutine("NextLevel");
     }
- 
 }

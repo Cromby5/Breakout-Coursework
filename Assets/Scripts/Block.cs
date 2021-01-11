@@ -31,6 +31,7 @@ class Block : MonoBehaviour
         //Switch case using the names of the gameobjects
         switch (other.gameObject.name)
         {
+            //The balls Spawned by BallSpawner
             case "Ball(Clone)":
             case "CrazyBall(Clone)":
                 //Destroys the block object that gets hit by the ball

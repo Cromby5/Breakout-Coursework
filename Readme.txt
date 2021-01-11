@@ -4,6 +4,8 @@ The point system counts how many blocks you hit in incriments of 100 per life be
 
 If you run the game and you are confused at the random gaps it is intentional 
 
-Tiles from https://jamiecross.itch.io/breakout-brick-breaker-game-tile-set-free
-
 Documentation.odt is my file talking about the bit of code I found challenging to implement
+
+
+Tiles from https://jamiecross.itch.io/breakout-brick-breaker-game-tile-set-free
+Sounds from https://mikiz.itch.io/mini-40-sounds-pack

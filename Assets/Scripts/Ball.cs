@@ -53,9 +53,10 @@ class Ball : MonoBehaviour
                 // Despawn the ball that touches the red area at the bottom of the screen   
                 spawner.DespawnBall(this);
                 // Lives will be decreased by 1 till no balls remain
-                spawner.DecreaseLives(); 
+                spawner.DecreaseLives();
                 break;
-       
+
+            //The Blocks Spawned by BlockSpawner
             case "Block(Clone)":
                 // This will grab the points of the object we will collide with (block) 
                 //and also transform the postion from local to world space as otherwise the x 
@@ -85,7 +86,6 @@ class Ball : MonoBehaviour
                     //Default movement to make ball go back down towards bat
                     directionY = -directionY;
                 }
-
                 //Play the break sound so you know you broke a block
                 audioBreak.Play();
                 Point.UpdatePoints();
@@ -104,5 +104,4 @@ class Ball : MonoBehaviour
         directionX = Mathf.Cos(angleInRadians);
         directionY = Mathf.Sin(angleInRadians);
     }
-
 }

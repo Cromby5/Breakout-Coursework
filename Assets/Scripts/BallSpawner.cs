@@ -15,7 +15,8 @@ class BallSpawner : MonoBehaviour
     public int Lives = 3;
     //To be assigned to ingame counter of Lives
     public Text LivesLabel = null;
-
+    //When Block gets destroyed audio
+    public AudioSource audioDeath;
     // This variable should be set in the Inspector to an existing ball object within
     // the scene. The template object can, and probably should be an inactive object.
     public Ball ballTemplate = null;
@@ -30,7 +31,7 @@ class BallSpawner : MonoBehaviour
             SpawnBall(ballTemplate);
     }
 
-    void SpawnBall(Ball templateToCopy)
+    public void SpawnBall(Ball templateToCopy)
     {
         //Create the Clone of the Ball object
         Ball ballClone = Instantiate(templateToCopy);
@@ -57,7 +58,8 @@ class BallSpawner : MonoBehaviour
         ballList.Remove(ballToDespawn);
         // Destroy the ball game object
         Destroy(ballToDespawn.gameObject);
-
+        //Play the Death Audio
+        audioDeath.Play();
         if (Lives == 1)
         {
             //For when 1 Life remains spawn a crazy ball
@@ -78,11 +80,9 @@ class BallSpawner : MonoBehaviour
     public void DecreaseLives()
     {
         //Decrease Lives by 1
-        Lives = Lives - 1;
+        Lives -= 1;
         //Shows Balls Remaining in game 
         LivesLabel.text = Lives.ToString();
     }
-
-
 }
 

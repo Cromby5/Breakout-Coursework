@@ -33,29 +33,31 @@ class Bat : MonoBehaviour
         bool isLeftPressed = Input.GetKey(moveLeftKey);
         bool isRightPressed = Input.GetKey(moveRightKey);
         bool isRestartPressed = Input.GetKey(RestartKey);
-        //Move Left
+       
         if (isLeftPressed && canMoveLeft)
         {
+            //Move Left
             direction = -1.0f;
         }
-        //Move Right
         else if (isRightPressed && canMoveRight)
         {
+            //Move Right
             direction = 1.0f;
         }
-        //No Movement
         else
         {
+            //No Movement
             direction = 0.0f;
         }
         //Restart Game
         if (isRestartPressed)
         {
+            //Reloads the scene as if you started the game again
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        //To quit the game if you decided to bulid and run it
         else if (Input.GetKey("escape"))
         {
+            //To quit the game if you decided to bulid and run it
             Application.Quit();
         }
     }
@@ -75,6 +77,7 @@ class Bat : MonoBehaviour
                 break;
             case "Ball(Clone)":
             case "CrazyBall(Clone)":
+                //Play the bat hit sound
                 audioBat.Play();
                 break;
         }
